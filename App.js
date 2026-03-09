@@ -13,18 +13,23 @@ const aumentar =  () => {
 }
 
 const diminuir =  () => {
-  setContador(contador - 1);
+
+{  contador > 0 ? setContador(contador - 1) : null}
+  
 }
  
 
   return (
     <View style={styles.container}>
-      <Text>Contdor de valores: </Text>
+      <Text style={styles.text}>Contdor de valores: </Text>
 
-      <Text>{contador}</Text>
-     
+      <Text style={styles.text}>{contador}</Text>
+
+     <View style={{flexDirection: 'row', justifyContent: 'space-between', width: 200 }}>
      <Button onPress={aumentar} title='Aumentar'/>
      <Button onPress={diminuir} title='Diminuir'/>
+
+     </View>
 
     <Image 
    source={require('./assets/paulo.png')}
@@ -42,6 +47,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  text: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  }
+
 });
 
 
