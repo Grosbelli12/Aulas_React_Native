@@ -1,10 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { Button } from 'react-native';
+
+
 
 export default function App() {
+const [contador, setContador] = useState(0)
+
+const aumentar =  () => {
+  setContador(contador + 1);
+}
+
+const diminuir =  () => {
+  setContador(contador - 1);
+}
+ 
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Contdor de valores: </Text>
+
+      <Text>{contador}</Text>
+     
+     <Button onPress={aumentar} title='Aumentar'/>
+     <Button onPress={diminuir} title='Diminuir'/>
+
+    <Image 
+   source={require('./assets/paulo.png')}
+    />
+
       <StatusBar style="auto" />
     </View>
   );
@@ -18,3 +43,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
