@@ -21,13 +21,19 @@ const diminuir =  () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Contdor de valores: </Text>
+      <Text style={styles.text}>Marcador  </Text>
 
       <Text style={styles.text}>{contador}</Text>
 
      <View style={{flexDirection: 'row', justifyContent: 'space-between', width: 200 }}>
      <Button onPress={aumentar} title='Aumentar'/>
      <Button onPress={diminuir} title='Diminuir'/>
+
+
+     <Button onPress={aumentar} title='Aumentar'/>
+     <Button onPress={diminuir} title='Diminuir'/>
+
+
 
      </View>
 
