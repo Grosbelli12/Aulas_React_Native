@@ -12,7 +12,7 @@ export default function App() {
   const [dados, setDados] = useState([]);
   const [carregando, setCarregando] = useState(true);
 
-  useEffect(async () => {
+  useEffect(  async () => {
     try {
       const resposta = await fetch(
         "https://jsonplaceholder.typicode.com/posts",
