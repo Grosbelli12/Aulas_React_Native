@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-
+import { flags } from "./data/bandeiras";
 import { StyleSheet, Text, View, Image, FlatList } from "react-native";
 import dadosCopa from "./data/copa_mundo_2026_jogos_brasilia_com_estadios.json";
 
@@ -34,11 +34,17 @@ export default function App() {
                 <View style={styles.card}>
                   <Text style={styles.cardHeader}>GRUPO {item.grupo}</Text>
                   <View style={styles.matchRow}>
-                  
+                    <Image
+                      style={{ width: 30, height: 30, resizeMode: "contain" }}
+                      source={flags[item.sigla_casa]}
+                    />
                     <Text style={styles.corpo}>{item.sigla_casa}</Text>
                     <Text style={styles.timeText}>{item.hora_et}</Text>
                     <Text style={styles.corpo}>{item.sigla_fora}</Text>
-                 
+                    <Image
+                      style={{ width: 30, height: 30, resizeMode: "contain" }}
+                      source={flags[item.sigla_fora]}
+                    />
                   </View>
                   <View style={styles.cardFooter}>
                     <Text style={styles.corpo}>{item.estadio}</Text>
@@ -64,6 +70,7 @@ const styles = StyleSheet.create({
   header: {
     alignItems: "center",
     marginBottom: 20,
+    marginTop: 25,
   },
   body: {
     flex: 1,
